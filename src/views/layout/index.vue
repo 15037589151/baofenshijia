@@ -100,8 +100,12 @@
             </el-autocomplete>
             <el-button size="small"
                        style="background:#040000;color:#fff;border-radius:0;margin-left:-6px;width:76px;height:34px;font-size:14px">搜产品</el-button>
-            <button size="small"
-                    style="border:none;text-align:center;background:#898989;color:#fff;border-radius:0;margin-left:4px;width:76px;height:34px;font-size:14px">搜设计师</button>
+            <button style="border:none;text-align:center;background:#898989;color:#fff;border-radius:0;margin-left:4px;width:76px;height:34px;font-size:14px">搜设计师</button>
+            <div class="gwcar">
+              <span class="iconfont icongouwuche"></span>
+              <span>购物车</span>
+              <span>5</span>
+            </div>
           </div>
           <div class="search-result"></div>
         </div>
@@ -218,7 +222,12 @@ export default {
         background-size: 100% 100%;
       }
       .searchbox {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
         .search-top {
+          display: flex;
+          justify-content: flex-start;
           .inline-input {
             .el-input__inner {
               border-radius: 0;
