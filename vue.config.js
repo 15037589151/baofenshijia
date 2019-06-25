@@ -1,9 +1,9 @@
 const webpack = require("webpack");
-// const path = require('path')
+const path = require("path");
 
-// function resolve(dir) {
-//   return path.join(__dirname, '..'1, dir)
-// }
+function resolve(dir) {
+  return path.join(__dirname, dir);
+}
 
 module.exports = {
   lintOnSave: false,
@@ -29,13 +29,25 @@ module.exports = {
       }
     }
   },
+  chainWebpack: config => {
+    config.resolve.alias.set("@", resolve("src"));
+    config.module
+      .rule("vue")
+      .use("vue-loader")
+      .loader("vue-loader")
+      .tap(options => {
+        options.compilerOptions.preserveWhitespace = true;
+        return options;
+      })
+      .end();
+  },
   configureWebpack: {
     // webpack 配置项
     // resolve: {
     //   alias: {
-    //     vue$: 'vue/dist/vue.esm.js'
-    //     // '@': resolve('src'),
-    //     // 'views': resolve('src/views')
+    //     vue$: "vue/dist/vue.esm.js",
+    //     "@": resolve("src"),
+    //     views: resolve("src/views")
     //   }
     // },
     plugins: [
