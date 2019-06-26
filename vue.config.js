@@ -10,7 +10,7 @@ module.exports = {
   publicPath: "./", // 部署项目路径
   // baseUrl: process.env_NODE_ENV == 'production' ? '/vehiclerepair/' : '', // 部署项目路径
   devServer: {
-    port: 8080, // 端口号
+    port: 1108, // 端口号
     // host: 'localhost',
     open: false, //配置自动启动浏览器
     proxy: {
